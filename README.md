@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @Sakonphat-dev
 - 👀 I’m interested in Code
-- 🌱 I’m currently learning C++
+- 🌱 I’m currently learning Python
 - 💞️ I’m looking to collaborate on this
 - 📫 How to reach me IG : sakonphat
 - 😄 Pronouns: him
