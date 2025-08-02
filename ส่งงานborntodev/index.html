@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>เครื่องคิด BMI</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #ffffff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background: white;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #00796b;
+      margin-bottom: 1rem;
+    }
+
+    label {
+      display: block;
+      text-align: left;
+      margin: 0.5rem 0 0.25rem;
+      color: #333;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    button {
+      background: #00796b;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition:  0.3s;
+    }
+
+    button:hover {
+      background: #004d40;
+    }
+
+    .result {
+      margin-top: 1.5rem;
+      font-size: 1.2rem;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>คำนวณ BMI</h1>
+    <label for="weight">น้ำหนัก (กิโลกรัม)</label>
+    <input type="number" id="weight" placeholder="เช่น 60">
+
+    <label for="height">ส่วนสูง (เซนติเมตร)</label>
+    <input type="number" id="height" placeholder="เช่น 170">
+
+    <button onclick="calculateBMI()">คำนวณ</button>
+
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    function calculateBMI() {
+      const weight = parseFloat(document.getElementById('weight').value);
+      const height = parseFloat(document.getElementById('height').value) / 100;
+
+      if (!weight && !height) {
+        document.getElementById('result').innerText = "กรุณากรอกข้อมูลให้ครบถ้วน";
+        return;
+      }
+
+      const bmi = weight / (height * height);
+      let category = '';
+
+      if (bmi < 18.5) category = "น้ำหนักน้อย";
+      else if (bmi < 23) category = "น้ำหนักปกติ";
+      else if (bmi < 25) category = "น้ำหนักเกิน";
+      else if (bmi < 30) category = "โรคอ้วนระดับ 1";
+      else category = "โรคอ้วนระดับ 2";
+
+      document.getElementById('result').innerText = `BMI ของคุณคือ ${bmi.toFixed(2)} (${category})`;
+    }
+  </script>
+
+</body>
+</html>
