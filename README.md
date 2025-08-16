@@ -2,7 +2,7 @@
 - 👀 I’m interested in Code
 - 🌱 I’m currently learning Python
 - 💞️ I’m looking to collaborate on this
-- 📫 How to reach me IG : sakonphat
+- 📫 How to reach me IG : s_konphat_.p
 - 😄 Pronouns: him
 - ⚡ Fun fact: learning code
 
